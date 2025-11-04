@@ -61,6 +61,8 @@ export const Article = memo(() => {
             src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80" 
             alt="Web 性能优化" 
             className="w-full h-64 md:h-80 object-cover rounded-lg shadow-md"
+            width={276}
+            height={256}
           />
         </div>
 

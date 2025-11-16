@@ -10,6 +10,20 @@ const app = new Hono();
 const etag = 'W/"12345-67890"';
 
 const dist = path.join(process.cwd(), "./dist");
+const assets = path.join(process.cwd(), "./assets");
+
+app.get("/main.js", async (c) => {
+  const js = fs.readFileSync(path.join(assets, "main.js")).toString();
+
+  c.header("Content-Type", "application/javascript");
+  return c.body(js, 200);
+});
+
+app.get("/go-to-work", async (c) => {
+  const html = fs.readFileSync(path.join(assets, "index.html")).toString();
+
+  return c.html(html);
+});
 
 app.get("/assets/*", async (c) => {
   const resourcePath = path.join(dist, c.req.path);
